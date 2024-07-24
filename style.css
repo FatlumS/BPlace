@@ -1,86 +1,81 @@
-
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Poppins', Arial, Helvetica, sans-serif; /* Ensuring consistency */
 }
 
-
-  
-header{
+header {
     position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        padding: 20px 100px;
-       
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        z-index: 99;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 99;
+    transition: top 0.3s; /* Smooth transition for header hiding */
 }
-.logo{
-    
-    font-size: 2em;
+
+.logo {
+    font-size: 3em;
     color: rgb(255, 255, 255);
     user-select: none;
+    text-decoration: none;
 }
-.navigation a{
 
+.navigation a {
     position: relative;
-
+    right: 75px;
     font-size: 1.1em;
     color: rgb(255, 255, 255);
     text-decoration: none;
     font-weight: 500;
-    margin-left: 40px;
-
+    margin-left: 80px;
 }
-body{
+
+body {
+   
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-   /* background: url(solid-navy-blue-concrete-textured-wall.jpg) no-repeat;*/
     background-size: cover;
     background-position: center;
     background-color: rgb(0, 0, 0);
-
-   font-family: serif;
-
-
-
 }
-.navigation a::after{
+
+.navigation a::after {
     content: '';
     position: absolute;
     left: 0;
     bottom: -6px;
     width: 100%;
     height: 3px;
-    background: white;
-    border-radius: 5;
+    background: blue;
+    border-radius: 5px; /* Add px unit for border-radius */
     transform-origin: left;
     transform: scaleX(0);
     transition: transform .2s;
-
-
 }
-.teksti{
+
+.teksti {
     position: absolute;
     left: 10px;
     font-size: 2em;
-    color: rgb(255, 255, 255);
+    color: blue;
     user-select: none;
 }
 
-.navigation a:hover::after{
+.navigation a:hover::after {
     transform: scaleX(1);
 }
-.navigation .login-popup{
+
+.navigation .login-popup {
     width: 130px;
     height: 50px;
-    background:darkblue;
+    background: blue;
     border: 2px solid #fff;
     outline: none;
     border-radius: 6px;
@@ -92,111 +87,78 @@ body{
     transition: .5s;
 }
 
-
-.navigation .login-popup:hover{
+.navigation .login-popup:hover {
     background-color: #0f031d;
-    color:rgb(255, 255, 255);
-
-
+    color: rgb(255, 255, 255);
 }
-.wrapper{
-    /*left: -325px;*/
+
+.wrapper {
     left: 400px;
     position: relative;
     width: 400px;
     height: 440px;
-    background:white;
-    border: 2px solid rgba (255,255, 255, .5);
+    background: rgb(235, 231, 231);
+    border: 2px solid rgba(255, 255, 255, .5);
     border-radius: 20px;
     backdrop-filter: blur(20px);
     box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
     display: flex;
     justify-content: center;
-        align-items: center;
-    transition:transform .5s ease, height .2s ease;
-   overflow: hidden;
+    align-items: center;
+    transition: transform .5s ease, height .2s ease;
+    overflow: hidden;
     transform: scale(1);
-
 }
+
 .wrapper.active-popup {
     transform: scale(1);
-
 }
-
 
 .wrapper.active {
     height: 520px;
 }
-      
+
 .wrapper.form-box {
-width: 100%;
-padding: 40px;
+    width: 100%;
+    padding: 40px;
 }
 
 .wrapper.form-box.login {
-    transition: transform .18s ease ;
-    transform : translateX(0);
-    
-   
+    transition: transform .18s ease;
+    transform: translateX(0);
 }
-.wrapper.active .form-box.login{
+
+.wrapper.active .form-box.login {
     transition: none;
     transform: translateX(400px);
-    
-
 }
 
-.wrapper .form-box.register{
+.wrapper .form-box.register {
     position: absolute;
     transition: none;
-    
     transform: translateX(400px);
-
-
 }
+
 .wrapper.active .form-box.register {
-    transition: transform .18s ease ;
-    transform : translateX(0);
-    
-   
+    transition: transform .18s ease;
+    transform: translateX(0);
 }
 
-/*.wrapper .icon-close{
-
-    position: absolute;
-    margin-top: 20px;
-    top: 0;
-    right: 0;
-    width: 45px;
-    height: 60px;
-    
-    font-size: 2em;
-    color: #fff;
-    display: flex;
-   cursor: pointer;
-   
-
-    
-
-}*/
-.form-box h2{
-
-
+.form-box h2 {
     font-size: 2em;
     color: #000000;
     text-align: center;
-} 
+}
 
-.input-box{
-
+.input-box {
     position: relative;
     width: 100%;
     height: 50px;
     border-bottom: 2px solid #162938;
     margin: 30px 0;
 }
-.input-box label {
 
+.input-box label {
     position: absolute;
     top: 50%;
     left: 5px;
@@ -210,13 +172,10 @@ padding: 40px;
 
 .input-box input:focus~label,
 .input-box input:valid~label {
-
     top: -5px;
-
 }
 
-.input-box input{
-
+.input-box input {
     width: 100%;
     height: 100%;
     background: transparent;
@@ -226,47 +185,43 @@ padding: 40px;
     color: #000000;
     font-weight: 600;
     padding: 0 35px 0 5px;
-
-
 }
+
 .input-box .icon {
     position: absolute;
     right: 8px;
     font-size: 1.2em;
     color: #000000;
     line-height: 57px;
-
-
 }
-.remember-forgot{
+
+.remember-forgot {
     font-size: .9em;
     color: #000000;
     font-weight: 500;
     margin: -15px 0 15px;
     display: flex;
-   justify-content: space-between;
-
-
+    justify-content: space-between;
 }
-.remember-forgot  label input {
-    accent-color:blue;
+
+.remember-forgot label input {
+    accent-color: blue;
     margin-right: 3px;
 }
+
 .remember-forgot a {
     color: #000000;
     text-decoration: none;
-    
-
-
 }
 
 .remember-forgot a:hover {
     text-decoration: underline;
 }
+
 .btn {
     width: 100%;
     height: 45px;
-    background: darkblue;
+    background: blue;
     border: none;
     outline: none;
     border-radius: 6px;
@@ -275,23 +230,105 @@ padding: 40px;
     color: #ffffff;
     font-weight: 500;
 }
-.login-register{
+
+.login-register {
     font-size: .9em;
     color: black;
     text-align: center;
     font-weight: 500;
-    margin: 25 px 0 10px;
+    margin: 25px 0 10px; /* Fix margin value */
     margin-top: 15px;
 }
+
 .login-register p a {
     color: #000000;
     text-decoration: none;
     font-weight: 600;
-
 }
-.login-register p a:hover{
-    text-decoration: underline;
 
+.login-register p a:hover {
+    text-decoration: underline;
+}
+
+.subscription-box {
+    position: absolute;
+    bottom: -200px; /* Moves it 20px from the bottom */
+    left: 50%; /* Start at the middle of the page */
+    transform: translateX(-50%); /* Keep it centered horizontally */
+    width: 600px;
+    height: 250px;
+    display: flex;
+   justify-content: center; /* Centers the content horizontally */
+}
+
+
+.subscription-box {
+    width: 100%;
+    max-width: 500px;
+    padding: 20px;
+    background: rgb(0, 0, 0);
+    border-radius: 6px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.subscription-box h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: rgb(255, 255, 255);
+    position: absolute;
+    margin-bottom: 80px;
+}
+
+.subscription-form .input-box {
+    position: relative;
+    margin-top: 60px; /* Add space above the input box */
+    margin-bottom: 30px; /* Space below remains the same or adjust as needed */
+    
+}
+
+
+.subscription-form .input-box input {
+    width: 100%;
+    padding: 10px 15px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+    color: white;
+  
+}
+
+.subscription-form .input-box label {
+    position: absolute;
+    top: 50%;
+    
+    transform: translateY(-50%);
+    font-size: 16px;
+    color: #ffffff;
+    transition: 0.3s;
+    pointer-events: none;
+}
+
+.subscription-form .input-box input:focus + label,
+.subscription-form .input-box input:not(:placeholder-shown) + label {
+    top: 0;
+    transform: translateY(-100%);
+    font-size: 12px;
+    color: rgb(233, 233, 233);
+}
+
+.subscription-form .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    background: darkblue;
+    color: #fff;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.subscription-form .btn:hover {
+    background: #0046a1;
 } 
-    
-    
